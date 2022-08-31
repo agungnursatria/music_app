@@ -70,9 +70,6 @@ class _HomePageState extends State<HomePage>
                 if (mpState is MediaPlayerOnListen) {
                   _playedMusic = mpState.music;
                 }
-                if (mpState is MediaPlayerOnPause) {
-                  _playedMusic = mpState.music;
-                }
 
                 return HomeView(
                   error: _error,

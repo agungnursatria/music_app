@@ -17,13 +17,3 @@ class MediaPlayerOnListen extends MediaPlayerState {
   @override
   List<Object?> get props => [music];
 }
-
-class MediaPlayerOnPause extends MediaPlayerState {
-  final Music music;
-  MediaPlayerOnPause({required this.music});
-
-  @override
-  List<Object?> get props => [music];
-}
-
-class MediaPlayerOnStopped extends MediaPlayerState {}

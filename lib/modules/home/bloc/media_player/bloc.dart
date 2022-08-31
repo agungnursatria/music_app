@@ -7,12 +7,11 @@ part 'event.dart';
 part 'state.dart';
 
 /// [MediaPlayerBloc] is a state management.
-/// This BLoC function is to manage the music player
+/// This BLoC function is to manage the music played
 ///
 class MediaPlayerBloc extends Bloc<MediaPlayerEvent, MediaPlayerState> {
   MediaPlayerBloc() : super(MediaPlayerInit()) {
     on<MediaPlayerListen>(_onMediaPlayerListen);
-    on<MediaPlayerPause>(_onMediaPlayerPause);
   }
 
   Future<void> _onMediaPlayerListen(
@@ -20,14 +19,5 @@ class MediaPlayerBloc extends Bloc<MediaPlayerEvent, MediaPlayerState> {
     Emitter<MediaPlayerState> emit,
   ) async {
     emit(MediaPlayerOnListen(music: event.music));
-  }
-
-  Future<void> _onMediaPlayerPause(
-    MediaPlayerPause event,
-    Emitter<MediaPlayerState> emit,
-  ) async {
-    if (state is! MediaPlayerOnListen) return;
-    MediaPlayerOnListen mState = state as MediaPlayerOnListen;
-    emit(MediaPlayerOnPause(music: mState.music));
   }
 }

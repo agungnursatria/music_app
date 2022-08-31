@@ -97,7 +97,6 @@ class HomeInitiator {
   ///
   void onTapPause() {
     _player.pause();
-    _mpBloc.add(MediaPlayerPause());
   }
 
   /// [onPlayerListen] is triggered when player start listen music
