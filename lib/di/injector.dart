@@ -1,14 +1,17 @@
 import 'package:get_it/get_it.dart';
 import 'package:music_app/config/network/http/network_http_interface.dart';
 import 'package:music_app/config/network/http/network_http_library.dart';
-import 'package:music_app/modules/main/services/service.dart';
+import 'package:music_app/modules/home/services/service.dart';
 
 class Injector {
   Injector._();
   static final Injector _instance = Injector._();
   factory Injector() => _instance;
 
+  /* ----------- PARAMETER ----------- */
   final _container = GetIt.instance;
+
+  /* ----------- FUNCTION ----------- */
 
   void init() {
     /// Register Network
@@ -21,6 +24,8 @@ class Injector {
       );
 
     /// Register Service
-    _container.registerLazySingleton(() => MainService(network: _container()));
+    _container.registerLazySingleton(() => HomeService(network: _container()));
   }
+
+  T find<T extends Object>() => _container.get<T>();
 }
