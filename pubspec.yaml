@@ -41,6 +41,8 @@ dependencies:
   just_audio: ^0.9.28
   equatable: ^2.0.5
   shimmer: ^2.0.0
+  bloc_test: ^9.1.0
+  build_runner: ^2.2.0
 
 dev_dependencies:
   flutter_test:
