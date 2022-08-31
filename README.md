@@ -25,7 +25,8 @@ Samsung A52 Android OS version 12
 
 - Make sure you have the latest Flutter SDK (at least version 2.17.6) to build the app
 - Make sure you have added the Flutter SDK path in your environment variable
-- [Resource](https://docs.flutter.dev/get-started/install/macos)
+- [Mac OS Installation](https://docs.flutter.dev/get-started/install/macos)
+- [Windows Installation](https://docs.flutter.dev/get-started/install/windows)
 
 **Clone Project**
 - Open Terminal 
