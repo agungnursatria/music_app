@@ -12,6 +12,7 @@ part 'state.dart';
 class MediaPlayerBloc extends Bloc<MediaPlayerEvent, MediaPlayerState> {
   MediaPlayerBloc() : super(MediaPlayerInit()) {
     on<MediaPlayerListen>(_onMediaPlayerListen);
+    on<MediaPlayerReset>(_onMediaPlayerReset);
   }
 
   Future<void> _onMediaPlayerListen(
@@ -19,5 +20,12 @@ class MediaPlayerBloc extends Bloc<MediaPlayerEvent, MediaPlayerState> {
     Emitter<MediaPlayerState> emit,
   ) async {
     emit(MediaPlayerOnListen(music: event.music));
+  }
+
+  Future<void> _onMediaPlayerReset(
+    MediaPlayerReset event,
+    Emitter<MediaPlayerState> emit,
+  ) async {
+    emit(MediaPlayerInit());
   }
 }

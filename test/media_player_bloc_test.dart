@@ -80,5 +80,18 @@ void main() {
         MediaPlayerOnListen(music: music),
       ],
     );
+
+    blocTest(
+      "emits [MediaPlayerInit] when [MediaPlayerReset] is called",
+      build: () => _bloc,
+      act: (_) {
+        _bloc.add(MediaPlayerListen(music: music));
+        _bloc.add(MediaPlayerReset());
+      },
+      expect: () => [
+        MediaPlayerOnListen(music: music),
+        MediaPlayerInit(),
+      ],
+    );
   });
 }

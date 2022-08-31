@@ -43,7 +43,12 @@ class _HomePageState extends State<HomePage>
       stream: _i.player.playerStateStream,
       builder: (context, snapshot) {
         PlayerState? _playerState = snapshot.data;
+        ProcessingState? _processingState = _playerState?.processingState;
         bool _isPlaying = _playerState?.playing ?? false;
+
+        if (_processingState == ProcessingState.completed) {
+          _i.onPlayerCompleted();
+        }
 
         return BlocBuilder(
           bloc: _i.bloc,

@@ -15,3 +15,5 @@ class MediaPlayerListen extends MediaPlayerEvent {
   @override
   List<Object?> get props => [music];
 }
+
+class MediaPlayerReset extends MediaPlayerEvent {}

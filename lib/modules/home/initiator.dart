@@ -106,4 +106,13 @@ class HomeInitiator {
     _animationController.forward();
     _player.play();
   }
+
+  /// [onPlayerCompleted] is triggered when player finished listen music
+  /// It will trigger the [_animationController] to hide the media player.
+  /// It will also reset the media player state to [MediaPlayerInit]
+  void onPlayerCompleted() {
+    _player.stop();
+    _animationController.reverse();
+    _mpBloc.add(MediaPlayerReset());
+  }
 }
