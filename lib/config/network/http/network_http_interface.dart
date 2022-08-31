@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_final_fields
 
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -47,7 +48,7 @@ class NetworkHttpInterface {
   ) {
     return Left(NetworkModel(
       code: jsonResponse.statusCode,
-      response: jsonResponse.data,
+      response: jsonDecode(jsonResponse.data),
     ));
   }
 

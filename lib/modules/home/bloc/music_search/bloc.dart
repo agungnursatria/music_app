@@ -25,7 +25,7 @@ class MusicSearchBloc extends Bloc<MusicSearchEvent, MusicSearchState> {
   ) async {
     emit(MusicSearchLoading());
 
-    _service.searchMusic(event.term).then(
+    await _service.searchMusic(event.term).then(
           (foldable) => foldable.fold(
             (networkModel) => emit(MusicSearchLoaded(
               musicList: MusicList.fromJson(networkModel.response),
