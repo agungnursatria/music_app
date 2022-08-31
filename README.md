@@ -55,7 +55,6 @@ Samsung A52 Android OS version 12
 ## Library References
 - [Cupertino Icons](https://pub.dev/packages/cupertino_icons)
 - [Dartz](https://pub.dev/packages/dartz)
-- Room
 - [Dio](https://pub.dev/packages/dio)
 - [Flutter_bloc](https://pub.dev/packages/flutter_bloc)
 - [Get_it](https://pub.dev/packages/get_it)
