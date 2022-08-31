@@ -1,5 +1,7 @@
 part of 'bloc.dart';
 
+/// [MediaPlayerEvent] is the state of the [MediaPlayerBloc]
+///
 @immutable
 abstract class MediaPlayerEvent extends Equatable {
   @override

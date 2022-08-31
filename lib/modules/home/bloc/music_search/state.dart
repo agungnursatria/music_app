@@ -1,5 +1,7 @@
 part of 'bloc.dart';
 
+/// [MusicSearchState] is the state of the [MusicSearchBloc]
+///
 @immutable
 abstract class MusicSearchState extends Equatable {
   @override

@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+/// [Debouncer] is class with function to give delay before execute an action.
+///
 class Debouncer {
   final int milliseconds;
   Timer? _timer;

@@ -13,6 +13,7 @@ import 'package:music_app/config/network/http/network_http_library.dart';
 import 'package:music_app/config/network/http/network_http_model.dart';
 import 'package:music_app/utils/helper.dart';
 
+/// [NetworkHttpInterface] is used to fetch API
 class NetworkHttpInterface {
   final NetworkLibrary _library;
   NetworkHttpInterface({required NetworkLibrary library}) : _library = library;

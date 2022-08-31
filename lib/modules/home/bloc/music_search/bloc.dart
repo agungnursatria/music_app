@@ -8,6 +8,9 @@ import 'package:music_app/modules/home/services/service.dart';
 part 'event.dart';
 part 'state.dart';
 
+/// [MusicSearchBloc] is a state management.
+/// This BLoC function is to search music from API
+///
 class MusicSearchBloc extends Bloc<MusicSearchEvent, MusicSearchState> {
   final HomeService _service;
 

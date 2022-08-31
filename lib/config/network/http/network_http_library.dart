@@ -2,6 +2,7 @@
 
 import 'package:dio/dio.dart';
 
+/// [NetworkLibrary] is used as interceptor before fetch API
 class NetworkLibrary {
   static const int TIMEOUT_MILLISECOND = 7000;
 

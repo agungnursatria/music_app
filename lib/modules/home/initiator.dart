@@ -4,6 +4,7 @@ import 'package:music_app/di/injector.dart';
 import 'package:music_app/models/music.dart';
 import 'package:music_app/modules/home/bloc/media_player/bloc.dart';
 import 'package:music_app/modules/home/bloc/music_search/bloc.dart';
+import 'package:music_app/modules/home/page.dart';
 import 'package:music_app/modules/home/services/service.dart';
 import 'package:music_app/utils/debouncher.dart';
 import 'package:music_app/utils/helper.dart';
@@ -27,6 +28,9 @@ class HomeInitiator {
 
   /* ----------- FUNCTION ----------- */
 
+  /// [init] is triggered when [HomePage] is inserted to the tree.
+  /// It initialize object will be used in [HomePage]
+  ///
   void init(TickerProvider tickerProvider) {
     _bloc = MusicSearchBloc(service: Injector().find<HomeService>());
     _mpBloc = MediaPlayerBloc();
@@ -48,6 +52,9 @@ class HomeInitiator {
     _bloc.add(MusicSearchGetData());
   }
 
+  /// [dispose] is triggered when [HomePage] is removed from the tree.
+  /// It discard & disable objects that no longer needed.
+  ///
   void dispose() {
     _bloc.close();
     _mpBloc.close();

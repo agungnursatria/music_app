@@ -6,6 +6,9 @@ import 'package:music_app/models/music.dart';
 part 'event.dart';
 part 'state.dart';
 
+/// [MediaPlayerBloc] is a state management.
+/// This BLoC function is to manage the music player
+///
 class MediaPlayerBloc extends Bloc<MediaPlayerEvent, MediaPlayerState> {
   MediaPlayerBloc() : super(MediaPlayerInit()) {
     on<MediaPlayerListen>(_onMediaPlayerListen);

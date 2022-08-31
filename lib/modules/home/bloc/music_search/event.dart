@@ -1,5 +1,7 @@
 part of 'bloc.dart';
 
+/// [MusicSearchEvent] is the state of the [MusicSearchBloc]
+///
 @immutable
 abstract class MusicSearchEvent extends Equatable {
   @override
