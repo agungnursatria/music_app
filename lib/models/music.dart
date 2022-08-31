@@ -1,5 +1,7 @@
-class Music {
-  Music({
+import 'package:equatable/equatable.dart';
+
+class Music extends Equatable {
+  const Music({
     this.wrapperType,
     this.kind,
     this.artistId,
@@ -30,6 +32,8 @@ class Music {
     this.country,
     this.currency,
     this.primaryGenreName,
+    this.contentAdvisoryRating,
+    this.isStreamable,
   });
 
   final String? wrapperType;
@@ -62,6 +66,8 @@ class Music {
   final String? country;
   final String? currency;
   final String? primaryGenreName;
+  final String? contentAdvisoryRating;
+  final bool? isStreamable;
 
   static List<Music> parseList(List<dynamic>? response) {
     return (response != null)
@@ -103,6 +109,44 @@ class Music {
       country: json["country"],
       currency: json["currency"],
       primaryGenreName: json["primaryGenreName"],
+      contentAdvisoryRating: json["contentAdvisoryRating"],
+      isStreamable: json["isStreamable"],
     );
   }
+
+  @override
+  List<Object?> get props => [
+        wrapperType,
+        kind,
+        artistId,
+        collectionId,
+        trackId,
+        artistName,
+        collectionName,
+        trackName,
+        collectionCensoredName,
+        trackCensoredName,
+        artistViewUrl,
+        collectionViewUrl,
+        trackViewUrl,
+        previewUrl,
+        artworkUrl30,
+        artworkUrl60,
+        artworkUrl100,
+        collectionPrice,
+        trackPrice,
+        releaseDate,
+        collectionExplicitness,
+        trackExplicitness,
+        discCount,
+        discNumber,
+        trackCount,
+        trackNumber,
+        trackTimeMillis,
+        country,
+        currency,
+        primaryGenreName,
+        contentAdvisoryRating,
+        isStreamable,
+      ];
 }
